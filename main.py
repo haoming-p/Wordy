@@ -3,6 +3,9 @@
 import streamlit as st
 from relationships import nltk_relationnship
 import pandas as pd
+import nltk
+
+nltk.data.path.append('./nltk_data')
 
 st.set_page_config(page_title="Wordy - NLTK WordNet Explorer", layout="wide")
 
@@ -15,6 +18,9 @@ if st.button('search'):
         st.markdown('🐾**NLTK WordNet**')
         relationships = nltk_relationnship(user_input)
         
+        if not relationships:
+            st.write(f"Sorry, we couldn't find anything for **'{user_input}'**. Try another word! 🐾")
+
         data = []
         for r in relationships:
             data.append({
