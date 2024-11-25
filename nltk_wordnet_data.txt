@@ -1,0 +1,51 @@
+# synsets('dog'): returns all meanings that contain 'dog' as a lemma
+synsets = wn.synsets('dog')
+[
+   Synset('dog.n.01'),  # domestic animal
+   Synset('frump.n.01'), # unattractive woman
+   Synset('dog.n.03'),  # someone worthless
+   Synset('cad.n.01'),  # someone unpleasant
+   ...
+]
+
+# synset: one word in the synsets('dog')
+synset = wn.synsets('dog')[0]
+{
+   'name': 'dog.n.01',           
+   'pos': 'n',                   
+   'definition': 'a member...',  
+   'examples': ['the dog barked all night', 'she got a reputation as a frump', ...],   
+   'lemmas': [                   # lemma names are the synonymous words within a specific synset.  
+       {                         
+           'name': 'dog',        
+           'count': 41,          # how often that specific meaning of the word was used
+           'synset': <reference to parent synset>
+       },
+       {
+           'name': 'domestic_dog',
+           'count': 3,
+           ...
+       }
+   ],
+   'hypernyms': [               # more general terms ("is-a" relationship)
+       Synset('canine.n.02'),   # dog is-a canine
+       {
+           'name': 'canine.n.02',
+           'definition': '...',
+           'lemmas': [...],
+           'hypernyms': [Synset('carnivore.n.01')], # canine is-a carnivore
+           'hyponyms': [...]     # more specific terms
+       }
+   ],
+   'hyponyms': [                # more specific types of dogs
+       Synset('puppy.n.01'),    # puppy is-a dog
+       Synset('pooch.n.01'),
+       {
+           'name': 'puppy.n.01',
+           'definition': 'young dog',
+           'lemmas': ['puppy', 'pup'],
+           'hypernyms': [Synset('dog.n.01')],  # points back to dog
+           'hyponyms': [...]     # even more specific terms
+       }
+   ]
+}

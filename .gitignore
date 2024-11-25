@@ -1,0 +1,89 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+wordy/
+env/
+
+# NLTK data
+nltk_data/
+
+# Streamlit-specific files
+.streamlit/
+
+# macOS system files
+.DS_Store
+
+# Logs and temporary files
+*.log
+
+
+1. 
+terminal: (vertual environment
+    python3 -m venv wordy
+    source wordy/bin/activate
+
+2. 
+terminal: (add requirements
+    pip install -r requirements.txt
+
+3. streamlit
+main.py:
+    import streamlit as st
+
+streamlit run main.py
+
+4. 下载安装nltk data
+terminal:
+    python -m nltk.downloader wordnet
+    unzip nltk_data/corpora/wordnet.zip -d nltk_data/corpora/
+relationships.py:
+    import nltk
+    nltk.data.path.append('./nltk_data')
+    from nltk.corpus import wordnet as wn
+
+5. pandas:
+import pandas as pd
+
+github repo相关
+1. 生成requirements(但有冗余 建议手动 但可以看到用了啥)
+terminal:
+pip freeze > requirements.txt
+
+
+tips:
+1. 打印json格式
+    import json
+    formatted_result = json.dumps(result, indent=4, ensure_ascii=False)
+    print(formatted_result)
+2. 暂停环境
+    deactivate
+run:
+streamlit run main.py
+python relationships.py
+
+ideas:
+English meaning
+Chinese meaning(type a button to show)
+mp3(type a button to play)
+synonym:
+
+hypernym:
+    Broader category that includes the word
+  
+hyponym:
+    More specific subtypes/examples of the word
+
+sibling:
+    Words that share the same parent (hypernym)
+    Example for "dog":
+        Parent: "canine"
+        Siblings: "wolf", "fox", "jackal" (other types of canines)
+
+Metonym (part meronyms):
+    Parts that make up the whole
+    Example for "dog":
+        Parts: "tail", "paw", "snout"
+        These are physical components of a dog
