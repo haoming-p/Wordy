@@ -7,9 +7,6 @@ __pycache__/
 wordy/
 env/
 
-# NLTK data
-nltk_data/
-
 # Streamlit-specific files
 .streamlit/
 
