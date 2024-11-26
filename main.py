@@ -13,11 +13,11 @@ st.title('🐾 You Found Wordy!!')
 user_input = st.text_input('Type in a word, and Wordy will fetch some magic for you! ✨')
 if st.button('search'):
     if user_input.strip():
-        st.write(f'Yayyy!found something interesting for {user_input}')
+        st.write(f'Yayyy! Wordy found something interesting for {user_input}! ✨')
         
-        st.markdown('🐾**NLTK WordNet**')
+        st.markdown('💓 **NLTK WordNet**')
         relationships = nltk_relationnship(user_input)
-        
+
         if not relationships:
             st.write(f"Sorry, we couldn't find anything for **'{user_input}'**. Try another word! 🐾")
 
