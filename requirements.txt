@@ -5,3 +5,4 @@ pandas
 python-dotenv
 openai
 requests
+googletrans==4.0.0-rc1
