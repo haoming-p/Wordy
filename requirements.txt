@@ -2,3 +2,5 @@ streamlit
 beautifulsoup4
 nltk
 pandas
+openai
+requests

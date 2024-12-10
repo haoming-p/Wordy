@@ -1,20 +1,59 @@
-# Python cache files
-__pycache__/
-*.pyc
-*.pyo
-
-# Virtual environment
 wordy/
+venv/
 env/
 
-# Streamlit-specific files
-.streamlit/
+# Environment variables
+.env
 
-# macOS system files
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# NLTK Data
+nltk_data/
+
+# Streamlit
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Logs and temporary files
+# Cache and temporary files
+.cache/
+.pytest_cache/
 *.log
+
 
 
 1. 
@@ -57,30 +96,7 @@ tips:
     print(formatted_result)
 2. 暂停环境
     deactivate
+
 run:
 streamlit run main.py
 python relationships.py
-
-ideas:
-English meaning
-Chinese meaning(type a button to show)
-mp3(type a button to play)
-synonym:
-
-hypernym:
-    Broader category that includes the word
-  
-hyponym:
-    More specific subtypes/examples of the word
-
-sibling:
-    Words that share the same parent (hypernym)
-    Example for "dog":
-        Parent: "canine"
-        Siblings: "wolf", "fox", "jackal" (other types of canines)
-
-Metonym (part meronyms):
-    Parts that make up the whole
-    Example for "dog":
-        Parts: "tail", "paw", "snout"
-        These are physical components of a dog

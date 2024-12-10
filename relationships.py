@@ -20,12 +20,20 @@ def nltk_relationnship(word):
     def get_all_lemma_name(synsets):
         return [lemma.name() for synset in synsets for lemma in synset.lemmas()]
 
+    # get usage count
+    def get_word_usage_count(synset, target_word):
+        for lemma in synset.lemmas():
+            if lemma.name == target_word:
+                return lemma.count()
+        return 0
+    
     all_results = []
     synsets = wn.synsets(word) 
     for synset in synsets:    
         synset_result = {
             'synset': synset.name(),
             'definition': synset.definition(),
+            'usage_count': get_word_usage_count(synset, word),
             'example': {
                 'top': synset.examples()[0] if synset.examples() else '',
                 'all': synset.examples(),
@@ -54,12 +62,5 @@ def nltk_relationnship(word):
         all_results.append(synset_result)
         
     return all_results
-
-# Example usage
-if __name__ == "__main__":
-    word = "dog"
-    results = nltk_relationnship(word)
-    import json
-    print(json.dumps(results, indent=4, ensure_ascii=False))
 
 
