@@ -2,5 +2,6 @@ streamlit
 beautifulsoup4
 nltk
 pandas
+python-dotenv
 openai
 requests
